@@ -5,40 +5,35 @@ import (
 	"fmt"
 )
 
-//const qwest = 30
-
-func div(i, div int) bool {
-	if i%div == 0 {
-		return true
-	}
-	return false
-}
-
-func input() (int, error) {
+func inputData() (int, error) {
 	fmt.Print("Enter text: ")
 	var inputValue int
 	fmt.Scanln(&inputValue)
 	if inputValue == 0 {
 		return inputValue, errors.New("foobar unexpected error")
-
 	} else {
 		return inputValue, nil
 	}
 }
 
+
+func division(i int) {
+
+	if i%5 == 0 && i%3 == 0 {
+		fmt.Println("fizzbuzz")
+	} else if i%3 == 0 {
+		fmt.Println("fizz")
+	} else if i%5 == 0 {
+		fmt.Println("buzz")
+	}
+}
+
 func main() {
-	var qwest, err = input();
-	if err == nil {
-		for i := 1; i <= qwest; i++ {
-			if div(i, 3) == true && div(i, 5) == true {
-				fmt.Println("fizzbuzz")
-			} else if div(i, 3) == true {
-				fmt.Println("fizz")
-			} else if div(i, 5) == true {
-				fmt.Println("buzz")
-			}
-		}
-	} else {
+	if inputValue, err := inputData(); err == nil {
+	for i := 1; i <= inputValue; i++ {
+		division(i)
+	}} else {
 		fmt.Print(err)
 	}
 }
+
