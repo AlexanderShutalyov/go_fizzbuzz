@@ -16,7 +16,6 @@ func inputData() (int, error) {
 	}
 }
 
-
 func division(i int) {
 
 	if i%5 == 0 && i%3 == 0 {
@@ -29,11 +28,12 @@ func division(i int) {
 }
 
 func main() {
-	if inputValue, err := inputData(); err == nil {
-	for i := 1; i <= inputValue; i++ {
-		division(i)
-	}} else {
+	if inputValue, err := inputData(); err != nil {
 		fmt.Print(err)
+	} else{
+		for i := 1; i <= inputValue; i++ {
+			division(i)
+		}
 	}
 }
 
