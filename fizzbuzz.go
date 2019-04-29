@@ -6,7 +6,7 @@ import (
 )
 
 func inputData() (int, error) {
-	fmt.Print("Enter text: ")
+	fmt.Print("Enter value: ")
 	var inputValue int
 	fmt.Scanln(&inputValue)
 	if inputValue == 0 {
@@ -24,6 +24,8 @@ func division(i int) {
 		fmt.Println("fizz")
 	} else if i%5 == 0 {
 		fmt.Println("buzz")
+	} else {
+		fmt.Println(i)
 	}
 }
 
